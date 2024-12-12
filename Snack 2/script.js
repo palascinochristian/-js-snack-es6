@@ -28,7 +28,22 @@ const randomNumGen = (min, max) => {
     return Num;
 }
 
-//Salvo i valori casuali a delle variabili riutilizzabili richiamando la funzione
-const points = randomNumGen(1, 60);
-const fails = randomNumGen (1, 10);
+// Creo un array vuoto che conterrà il nome e i falli nella stampa finale
+let finalSquads = [];
+
+
+// Creo un ciclo che per la lunghezza dell'array assegna i punti e i falli tramite le variabili
+for(let i = 0; i < soccerSquads.length; i++){
+    const points = randomNumGen(1, 60);
+    const fails = randomNumGen (1, 10)
+    soccerSquads[i].points = points;
+    soccerSquads[i].fails = fails;
+    // Pusho dentro l'array un oggetto che contiene Nome squadra e falli 
+    finalSquads.push({ Nome: soccerSquads[i].squadName , Falli: soccerSquads[i].fails});
+
+}
+
+// Stampo in console l'array finale
+console.log(finalSquads);
+
 
