@@ -2,20 +2,22 @@
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 let numInterval = [];
 
-const PrintInterval = (array, min, max) => {
+
+// Creo una funzione che accetta come argomenti un array e due numeri
+const PrintInterval = (array, num1, num2) => {
     
-    // Se min è minore di max, attraverso l'array in ordine crescente
-    if (min < max) {
+    // Se num1 è minore di num2, attraverso l'array in ordine crescente
+    if (num1 < num2) {
         for (let i = 0; i < array.length; i++) {
-            if (array[i] >= min && array[i] <= max) {
+            if (array[i] >= num1 && array[i] <= num2) {
                 numInterval.push(array[i]);
             }
         }
     } 
-    // altrimenti se min è maggiore di max, attraverso l'array al contrario
-    else if (min > max) {
+    // altrimenti se num1 è maggiore di num2, attraverso l'array al contrario
+    else if (num1 > num2) {
         for (let j = array.length - 1; j >= 0; j--) { 
-            if (array[j] >= max && array[j] <= min) {
+            if (array[j] >= num2 && array[j] <= num1) {
                 numInterval.push(array[j]);
             }
         }
@@ -24,5 +26,5 @@ const PrintInterval = (array, min, max) => {
     return numInterval; 
 };
 
-numInterval = PrintInterval(numbers, 1, 3);
+numInterval = PrintInterval(numbers, 10, 1);
 console.log(numInterval);
